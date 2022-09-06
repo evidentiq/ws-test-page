@@ -20,10 +20,10 @@
 
     <script>
 
-        var ws;
+        let ws;
 
         function connectToServer() {
-            var icon = document.getElementById("connection_error_icon");
+            const icon = document.getElementById("connection_error_icon");
 
             try {
                 ws = new WebSocket(document.getElementById("serverSelected").value);
@@ -52,9 +52,9 @@
         }
 
         function sendMessage() {
-            var icon = document.getElementById("error_icon");
+            const icon = document.getElementById("error_icon");
             try {
-                var msgObj = JSON.parse(document.getElementById("msgToServer").value);
+                const msgObj = JSON.parse(document.getElementById("msgToServer").value);
                 ws.send(JSON.stringify(msgObj));
                 icon.style.visibility = "hidden";
                 icon.title = '';
