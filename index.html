@@ -32,6 +32,7 @@
     <script>
 
         var ws;
+
         function connectToServer() {
             var icon = document.getElementById("connection_error_icon");
 
@@ -49,16 +50,18 @@
                 };
                 icon.style.visibility = "hidden";
                 icon.title = '';
-            } catch(e) {
+            } catch (e) {
                 icon.style.visibility = "visible";
                 icon.title = e.message;
             }
 
 
         }
+
         function disconnectToServer() {
             ws.close();
         }
+
         function sendMessage() {
             var icon = document.getElementById("error_icon");
             try {
@@ -107,10 +110,11 @@
     <!-- /.row -->
     <div class="input-group">
         Connection Status:
-      <span id="connectionStatus">
+        <span id="connectionStatus">
           Disconnected
       </span>
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" id="connection_error_icon" style="color:#c9302c; visibility: hidden"></span>
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" id="connection_error_icon"
+              style="color:#c9302c; visibility: hidden"></span>
     </div>
     <!-- /.row -->
 
@@ -119,11 +123,12 @@
     <button type="button" class="btn btn-sm btn-success" onclick="sendMessage()">
         Send Message
     </button>
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" id="error_icon" style="color:#c9302c; visibility: hidden"></span>
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" id="error_icon"
+          style="color:#c9302c; visibility: hidden"></span>
 
     <br><br>
-          <textarea id="responseFromServer" placeholder="Response From Server" style="width: 700px; height: 300px"
-                    readonly>
+    <textarea id="responseFromServer" placeholder="Response From Server" style="width: 700px; height: 300px"
+              readonly>
           </textarea>
 
 </div>
